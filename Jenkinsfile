@@ -16,14 +16,14 @@ pipeline {
                 sh  "docker build -t ${DOCKER_IMAGE}."
             }
         }
-        post{
-            success {
-                echo "Image built successfully"
-            }
-            failure {
-                echo "Image build failed"   
-            }
-        }            
     }
+    post{
+        success {
+            echo "Image built successfully"
+        }
+        failure {
+            echo "Image build failed"   
+        }
+    }            
 }
 
